@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="height: 70px;">
-  <a class="navbar-brand" href="#" style="margin-left: 50px;">Angular CRUD Application</a>
+  <a class="navbar-brand" routerLink="/" style="margin-left: 50px;">Angular CRUD Application</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContentLG"
           aria-controls="navbarSupportedContentLG" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,14 +8,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContentLG">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active d-flex">
-        <a class="nav-link btn btn-light text-dark m-2" href="#" routerLink="/post" > All Posts</a>
-        <a class="nav-link btn btn-light text-dark m-2" href="#" routerLink="/comment" > All Comments</a>
+        <a class="nav-link btn btn-light text-dark m-2" href="#" routerLink="/post"> All Posts</a>
+        <a class="nav-link btn btn-light text-dark m-2" href="#" routerLink="/comment"> All Comments</a>
       </li>
     </ul>
 
   </div>
 
 </nav>
-
 
 <router-outlet></router-outlet>

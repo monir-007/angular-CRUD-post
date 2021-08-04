@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {CommentService} from "../comment.service";
-import {Comments} from "../comment";
+
 
 @Component({
   selector: 'app-create',
