@@ -10,7 +10,9 @@ import { Post } from '../post';
 })
 export class ViewComponent implements OnInit {
 
+  // @ts-ignore
   id: number;
+  // @ts-ignore
   post: Post;
 
   constructor(

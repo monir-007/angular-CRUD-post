@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>Create New Comment</h1>
+
+  <a href="#" routerLink="/comment/index" class="btn btn-primary">Back</a>
+
+  <div class="col-md-8">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <!--    <div class="form-group">-->
+      <!--      <label for="postId">Post ID</label>-->
+      <!--      <select name="postId" id="postId" class="form-control" required>-->
+      <!--        <option *ngFor="let post of comments." [value]="post">{{post}}</option>-->
+      <!--      </select>-->
+      <!--      <div *ngIf="f.postId.touched && f.postId.invalid" class="alert alert-danger">-->
+      <!--        <div *ngIf="f.postId.errors?.required">Post ID is required.</div>-->
+      <!--      </div>-->
+      <!--    </div>-->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          formControlName="name"
+          id="name"
+          type="text"
+          class="form-control">
+        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+          <div *ngIf="f.name.errors?.required">Name is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          formControlName="email"
+          id="email"
+          type="email"
+          class="form-control">
+        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+          <div *ngIf="f.email.errors?.required">Email is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="body">Body</label>
+        <textarea
+          formControlName="body"
+          id="body"
+          type="text"
+          class="form-control">
+            </textarea>
+        <div *ngIf="f.body.touched && f.body.invalid" class="alert alert-danger">
+          <div *ngIf="f.body.errors?.required">Body is required.</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary mt-2" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+  </div>
+</div>
+
