@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Post} from "../post";
+import {PostService} from "../post.service";
 
 @Component({
   selector: 'app-index',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  posts: Post[] = [];
+
+  constructor(public postService: PostService) {
+  }
 
   ngOnInit(): void {
+    this.postService.getAll().subscribe((data: Post[]) => {
+      this.posts = data;
+      console.log(this.posts);
+    })
+  }
+
+  deletePost(id: number) {
+    this.postService.delete(id).subscribe(response => {
+      this.posts = this.posts.filter(item => item.id !== id);
+      console.log('Post deleted successfully!');
+    })
   }
 
 }
